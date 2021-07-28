@@ -1,0 +1,3 @@
+admin:
+  username: rosehan
+  deployCommand: './admin_script/hexo-generate.sh' # expire: 60*1

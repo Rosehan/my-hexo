@@ -1,0 +1,81 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>H5抽奖的</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .luck{
+            width: 600px;
+            height: 600px;
+            position: relative;
+            border: 1px solid #cccccc;
+            margin: 0 auto;
+        }
+        .draw{
+            background-image:url("../imge/luckdraw.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            width: 600px;
+            height: 600px;
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            left: 0;
+        }
+        .shot{
+            background-image:url("../imge/luckshot.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            text-align: center;
+            width: 196px;
+            height: 246px;
+            position: absolute;
+            top: 153px;
+            left: 196px;
+            z-index: 3;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="luck">
+    <div class="draw" id="draw">
+    </div>
+    <div class="shot" id="btn">
+       <button>抽奖的</button>
+    </div>
+</div>
+
+</body>
+<script>
+    var draw = document.getElementById('draw');
+    var btn = document.getElementById('btn');
+    var timer;
+    btn.onclick = function(){
+        var t = 0;
+        var stopT = parseInt(1+Math.random()*10)*1000;
+       clearInterval(timer);
+        timer = setInterval(function(){
+            if(t >= 360){
+                t = 0;
+            }else{
+                t = t+1;
+            }
+            draw.style.transform = 'rotate('+t+'deg)';
+        },20);
+
+        setTimeout(function(){
+            clearInterval(timer);
+        },stopT);
+    }
+</script>
+</html>

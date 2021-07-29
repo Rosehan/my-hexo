@@ -85,6 +85,7 @@ disqus_shortname:
 #  - hexo-generator-baidu-sitemap
 #  - hexo-generator-sitemap
 
+# theme: maupassant
 theme: next
 exclude_generator:
 
